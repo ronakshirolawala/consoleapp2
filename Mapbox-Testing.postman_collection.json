@@ -1,0 +1,439 @@
+{
+	"info": {
+		"_postman_id": "1510fd00-b819-4ac8-9dcd-a9923d5475e0",
+		"name": "Mapbox-Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20459181"
+	},
+	"item": [
+		{
+			"name": "Create a tileset source",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/ronak.shirolawala/Downloads/ldgeojson/Polygon_MultiFeature/Upload/Testing_MultiPoly_exclude_dup_4round_of0.ldgeojson"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.mapbox.com/tilesets/v1/sources/linklogistics/cbsa?access_token=sk.eyJ1IjoibGlua2xvZ2lzdGljcyIsImEiOiJjbDc5MzcwMXMwZm5xM3BuZ3U4aDl3aGR1In0._juG4yP9qhHwvtqakgBeHw",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"tilesets",
+						"v1",
+						"sources",
+						"linklogistics",
+						"cbsa"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "sk.eyJ1IjoibGlua2xvZ2lzdGljcyIsImEiOiJjbDc5MzcwMXMwZm5xM3BuZ3U4aDl3aGR1In0._juG4yP9qhHwvtqakgBeHw"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Recipe",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"version\": 1,\r\n    \"layers\": {\r\n        \"cbsa\": {\r\n            \"source\": \"mapbox://tileset-source/linklogistics/cbsa\",\r\n            \"minzoom\": 0,\r\n            \"maxzoom\": 12\r\n        }\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "https://api.mapbox.com/tilesets/v1/validateRecipe?access_token=sk.eyJ1IjoibGlua2xvZ2lzdGljcyIsImEiOiJjbDc5MzcwMXMwZm5xM3BuZ3U4aDl3aGR1In0._juG4yP9qhHwvtqakgBeHw",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"tilesets",
+						"v1",
+						"validateRecipe"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "sk.eyJ1IjoibGlua2xvZ2lzdGljcyIsImEiOiJjbDc5MzcwMXMwZm5xM3BuZ3U4aDl3aGR1In0._juG4yP9qhHwvtqakgBeHw"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Append to an existing tileset source",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/ronak.shirolawala/Downloads/csa_cbsa_shapes_final_10set_7.geojson"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.mapbox.com/tilesets/v1/sources/linklogistics/cbsa?access_token=sk.eyJ1IjoibGlua2xvZ2lzdGljcyIsImEiOiJjbDc5MzcwMXMwZm5xM3BuZ3U4aDl3aGR1In0._juG4yP9qhHwvtqakgBeHw",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"tilesets",
+						"v1",
+						"sources",
+						"linklogistics",
+						"cbsa"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "sk.eyJ1IjoibGlua2xvZ2lzdGljcyIsImEiOiJjbDc5MzcwMXMwZm5xM3BuZ3U4aDl3aGR1In0._juG4yP9qhHwvtqakgBeHw"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve tileset source information",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.mapbox.com/tilesets/v1/sources/linklogistics/cbsa?access_token=sk.eyJ1IjoibGlua2xvZ2lzdGljcyIsImEiOiJjbDc5MzcwMXMwZm5xM3BuZ3U4aDl3aGR1In0._juG4yP9qhHwvtqakgBeHw",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"tilesets",
+						"v1",
+						"sources",
+						"linklogistics",
+						"cbsa"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "sk.eyJ1IjoibGlua2xvZ2lzdGljcyIsImEiOiJjbDc5MzcwMXMwZm5xM3BuZ3U4aDl3aGR1In0._juG4yP9qhHwvtqakgBeHw"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List tileset sources",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.mapbox.com/tilesets/v1/sources/linklogistics?access_token=sk.eyJ1IjoibGlua2xvZ2lzdGljcyIsImEiOiJjbDc5MzcwMXMwZm5xM3BuZ3U4aDl3aGR1In0._juG4yP9qhHwvtqakgBeHw",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"tilesets",
+						"v1",
+						"sources",
+						"linklogistics"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "sk.eyJ1IjoibGlua2xvZ2lzdGljcyIsImEiOiJjbDc5MzcwMXMwZm5xM3BuZ3U4aDl3aGR1In0._juG4yP9qhHwvtqakgBeHw"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a tileset",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"recipe\": {\r\n    \"version\": 1,\r\n    \"layers\": {\r\n        \"cbsa\": {\r\n            \"source\": \"mapbox://tileset-source/linklogistics/cbsa\",\r\n            \"minzoom\": 0,\r\n            \"maxzoom\": 12\r\n        }\r\n    }\r\n    },\r\n    \"name\": \"CBSA\"\r\n}"
+				},
+				"url": {
+					"raw": "https://api.mapbox.com/tilesets/v1/linklogistics.cbsa?access_token=sk.eyJ1IjoibGlua2xvZ2lzdGljcyIsImEiOiJjbDc5MzcwMXMwZm5xM3BuZ3U4aDl3aGR1In0._juG4yP9qhHwvtqakgBeHw",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"tilesets",
+						"v1",
+						"linklogistics.cbsa"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "sk.eyJ1IjoibGlua2xvZ2lzdGljcyIsImEiOiJjbDc5MzcwMXMwZm5xM3BuZ3U4aDl3aGR1In0._juG4yP9qhHwvtqakgBeHw"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Publish a tileset",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.mapbox.com/tilesets/v1/linklogistics.cbsa/publish?access_token=sk.eyJ1IjoibGlua2xvZ2lzdGljcyIsImEiOiJjbDc5MzcwMXMwZm5xM3BuZ3U4aDl3aGR1In0._juG4yP9qhHwvtqakgBeHw",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"tilesets",
+						"v1",
+						"linklogistics.cbsa",
+						"publish"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "sk.eyJ1IjoibGlua2xvZ2lzdGljcyIsImEiOiJjbDc5MzcwMXMwZm5xM3BuZ3U4aDl3aGR1In0._juG4yP9qhHwvtqakgBeHw"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve information about a single tileset job",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.mapbox.com/tilesets/v1/linklogistics.cbsa/jobs/cl8b925jn001e09miasn25tp2?access_token=sk.eyJ1IjoibGlua2xvZ2lzdGljcyIsImEiOiJjbDc5MzcwMXMwZm5xM3BuZ3U4aDl3aGR1In0._juG4yP9qhHwvtqakgBeHw",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"tilesets",
+						"v1",
+						"linklogistics.cbsa",
+						"jobs",
+						"cl8b925jn001e09miasn25tp2"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "sk.eyJ1IjoibGlua2xvZ2lzdGljcyIsImEiOiJjbDc5MzcwMXMwZm5xM3BuZ3U4aDl3aGR1In0._juG4yP9qhHwvtqakgBeHw"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Queue result",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.mapbox.com/tilesets/v1/linklogistics.cbsa/jobs?access_token=sk.eyJ1IjoibGlua2xvZ2lzdGljcyIsImEiOiJjbDc5MzcwMXMwZm5xM3BuZ3U4aDl3aGR1In0._juG4yP9qhHwvtqakgBeHw",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"tilesets",
+						"v1",
+						"linklogistics.cbsa",
+						"jobs"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "sk.eyJ1IjoibGlua2xvZ2lzdGljcyIsImEiOiJjbDc5MzcwMXMwZm5xM3BuZ3U4aDl3aGR1In0._juG4yP9qhHwvtqakgBeHw"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create an upload - AWS",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"url\": \"http://tilestream-tilesets-production.s3.amazonaws.com/3f/_pending/ovuir16rdq72y700avghz18lc/linklogistics\",\n  \"tileset\": \"linklogistics.4afsohup\"\n}"
+				},
+				"url": {
+					"raw": "https://api.mapbox.com/uploads/v1/linklogistics?access_token=sk.eyJ1IjoibGlua2xvZ2lzdGljcyIsImEiOiJjbDc5MzcwMXMwZm5xM3BuZ3U4aDl3aGR1In0._juG4yP9qhHwvtqakgBeHw",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"uploads",
+						"v1",
+						"linklogistics"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "sk.eyJ1IjoibGlua2xvZ2lzdGljcyIsImEiOiJjbDc5MzcwMXMwZm5xM3BuZ3U4aDl3aGR1In0._juG4yP9qhHwvtqakgBeHw"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve S3 credentials - AWS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.mapbox.com/uploads/v1/linklogistics/credentials?access_token=sk.eyJ1IjoibGlua2xvZ2lzdGljcyIsImEiOiJjbDc5MzcwMXMwZm5xM3BuZ3U4aDl3aGR1In0._juG4yP9qhHwvtqakgBeHw",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"uploads",
+						"v1",
+						"linklogistics",
+						"credentials"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "sk.eyJ1IjoibGlua2xvZ2lzdGljcyIsImEiOiJjbDc5MzcwMXMwZm5xM3BuZ3U4aDl3aGR1In0._juG4yP9qhHwvtqakgBeHw"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a tileset source",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://api.mapbox.com/tilesets/v1/sources/linklogistics/cbsa?access_token=sk.eyJ1IjoibGlua2xvZ2lzdGljcyIsImEiOiJjbDc5MzcwMXMwZm5xM3BuZ3U4aDl3aGR1In0._juG4yP9qhHwvtqakgBeHw",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"tilesets",
+						"v1",
+						"sources",
+						"linklogistics",
+						"cbsa"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "sk.eyJ1IjoibGlua2xvZ2lzdGljcyIsImEiOiJjbDc5MzcwMXMwZm5xM3BuZ3U4aDl3aGR1In0._juG4yP9qhHwvtqakgBeHw"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete tileset",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://api.mapbox.com/tilesets/v1/linklogistics.cbsa1?access_token=sk.eyJ1IjoibGlua2xvZ2lzdGljcyIsImEiOiJjbDc5MzcwMXMwZm5xM3BuZ3U4aDl3aGR1In0._juG4yP9qhHwvtqakgBeHw",
+					"protocol": "https",
+					"host": [
+						"api",
+						"mapbox",
+						"com"
+					],
+					"path": [
+						"tilesets",
+						"v1",
+						"linklogistics.cbsa1"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "sk.eyJ1IjoibGlua2xvZ2lzdGljcyIsImEiOiJjbDc5MzcwMXMwZm5xM3BuZ3U4aDl3aGR1In0._juG4yP9qhHwvtqakgBeHw"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
